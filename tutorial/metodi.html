@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Ruby</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+<script type="application/ld+json">
+{"name":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@type":"WebSite","url":"http://localhost:4000/","headline":"Your awesome title","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" />
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" rel="author" href="/">Ruby tutorial</a>
+
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+      </nav> 
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home">
+			<h2 class="post-list-heading">METODI</h2>
+    </div>
+  COME SI DEFINISCE UN METODO?
+  <br>
+		<p>
+			Per creare un metodo si utilizza il comando DEF e per terminarlo si usa END. <br>
+			>> def metodo <br>
+			>> end <br>
+			=> nil <br>
+			<br>
+			Una volta creato un metodo, si richiama scrivendo il nome e l’argomento (se definito nel metodo), sulla riga di comando. <br>
+			<br>
+			>> metodo <br>
+			=> nil <br>
+			<br>
+			I metodi presenti all’interno di una classe (che si vedrà in seguito) sono 
+			solitamente <b>pubblici</b>, e cioè possono essere utilizzati al di fuori della 
+			classe, in qualsiasi parte del codice. Se si vuole richiamare un metodo 
+			solo all’interno della sua classe è necessario dichiararlo come <b>privato</b>, 
+			mettendo la parola “private” prima di definire il metodo. Per richiamare 
+			il metodo privato è necessario creare un altro metodo all’interno del 
+			programma che permetta di richiamare il metodo e così da poterlo utilizzare.
+
+			<br>
+			<br>
+			<i>Esempio:</i>
+			<br><br>
+			class Human <br>
+			&ensp; attr_accessor :name, :age <br><br>
+			&ensp; <i>#metodo pubblico</i> <br>
+			&ensp; def dimmi_di_te <br>
+			&emsp; puts "Ciao, sono #{@name} e ho #{@age} anni."<br>
+			&ensp; end <br>
+			<br>
+			&ensp; <i>#metodo pubblico che ci permette di richiamare il metodo privato</i><br>
+			&ensp; def confessa <br>
+			&emsp; dimmi_un_segreto <br>
+			&ensp; end <br>
+			<br>
+			&ensp; private <br>
+			&ensp; def dimmi_un_segreto <br>
+			&emsp; puts "Non sono umano, sono un robot" <br>
+			&ensp; end <br> <br>
+			end <br>
+	<i>#creo un nuovo oggetto di tipo Human</i><br>
+			h = Human.new<br>
+			<br>
+			<i>#diamo un valore ai parametri da passare alle funzioni</i><br>
+			h.name = "Marvin"<br>
+			h.age = 31<br>
+			<br>
+			<i>#richiamo i due metodi</i><br>
+			h.dimmi_di_te<br>
+			h.confessa<br>
+		</p> 
+
+		<br>
+		TIPI DI METODI
+		<br>
+		In questo linguaggio di programmazione sono presenti differenti metodi;
+		qui di seguito ne vengono indicati alcuni: 
+		<ul>
+			<li> 
+				<b>EACH</b>, metodo che accetta un blocco di codice e lo esegue per ogni elemento della lista. I bit tra Do e END sono un unico blocco;
+			</li>
+			<li>
+				<b>EXIST? (‘miofile.txt’)</b>, controlla che il file esista;
+			</li>
+			<li>
+				<b>FILE? (‘miofile.txt’)</b>, controlla se un file è un documento;
+			</li>
+			<li>
+				<b>DIRECTORY?(‘miadirectory’) </b>, controlla se un file è una cartella (directory);
+			</li>
+			<li>
+				<b>FTYPE (‘miofile.txt’)</b>, controlla che tipo di file è, per esempio se è un documento o una directory;
+			</li>
+			<li>
+				<b>SIZE (‘miofile.txt’) </b>, controlla quanto è grande e la quantità di spazio che occupa sul disco;
+			</li>
+			<li>
+				<b>JOIN (‘cartella1’,’cartella2’,’miofile.txt’) </b>, costruisce un percorso di file concatenando due o più stringhe;
+			</li>
+			<li>
+				<b>BASENAME (‘/cartella1/cartella2/miofile.txt’)  </b>, restituisce il nome del mio file;
+			</li>
+			<li>
+				<b>DIRNAME (‘/cartella1/cartella2/miofile.txt’) </b>, riporta il percorso delle directory senza il nome del file;
+			</li>
+			<li>
+				<b>EXTNAME (‘miofile.txt’) </b>, scrive sulla linea di comando l’estensione del nome del file, cioè il testo dopo il punto, comprendendolo;
+			</li>
+			<li>
+				<b>MAP</b>, invoca il codice di blocco indicato una volta per ogni elemento self e crea un nuovo array contenente i valori restituiti dal blocco;
+			</li>
+			<li>
+				<b>SELECT </b>, è simile a map ma restituisce solo gli elementi che corrispondono alla condizione.
+			</li>
+		</ul>
+		     </div>
+    </main>
+  </body>
+  </html>
