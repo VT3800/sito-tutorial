@@ -1,0 +1,24 @@
+﻿h1 {
+	text-align: center;
+	color: green ;
+	font-size: 30pt;
+}
+
+h2 {
+	text-align: left;
+	color: green;
+	font-size: 20pt;
+}
+
+a {
+	color: #006600;
+}
+
+a:visited {
+	color:#00cc00;
+}
+
+Html{
+	background-color:#e5ffcc;
+}
+
