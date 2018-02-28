@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Ruby</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+<script type="application/ld+json">
+{"name":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@type":"WebSite","url":"http://localhost:4000/","headline":"Your awesome title","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" />
+  
+</head>
+
+
+  <body>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home">
+			<h2 class="post-list-heading">RANGE</h2>
+      </div>
+	In Ruby esiste anche il comando per indicare un range di valori e questo viene identificato con due punti (..).
+		Qui di seguito si possono osservare alcuni esempi:
+		<br>
+		<p>
+			>> (1..5).each {|a| print "#{a}, "} <br>
+			1,2,3,4,5, => 1..5 <br>
+			>> ("bad".."bag").each {|a| print "#{a}, "} <br>
+			bad, bae, baf, bag, => "bad".."bag" <br>
+			<br>
+			Nel primo caso viene stampato un range di numeri da 1 a 5,
+			mentre nel secondo caso si marca un range di stringhe da “bad” a “bag”.
+			Essendo le prime lettere delle stringhe uguali, viene analizzata solo l’ultima lettera e quindi il range si basa dalla lettera “d” alla “g” seguendo l’ordine alfabetico.
+		</p>
+     </div>
+    </main>
+  </body>
+</html>

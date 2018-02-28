@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Ruby</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+<script type="application/ld+json">
+{"name":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@type":"WebSite","url":"http://localhost:4000/","headline":"Your awesome title","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" />
+  
+</head>
+
+
+  <body>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home">
+			<h2 class="post-list-heading">PROGRAMMI</h2>
+      </div>
+<p>
+			Questo programma serve per creare una tabella contenente le tabelline dei
+			numeri da 1 a 10: 
+			<br>
+			numeri = [1,2,3,4,5,6,7,8,9,10] <br>
+			<br>
+			for n in numeri <br>
+			&ensp; riga = ' ' <br>
+			&ensp; for moltiplicatore in numeri <br>
+			&emsp; valore = n * moltiplicatore	<br>
+			&emsp; if valore < 10 <br>
+			&emsp;&emsp; separatore = ' ' <br>
+			&emsp; else <br>
+			&emsp;&emsp; separatore = ' ' <br>
+			&emsp; end <br>
+			&emsp; riga = riga + valore.to_s + separatore <br>
+			&ensp; end <br>
+			&ensp; puts riga <br>
+			end <br>
+				<br>
+			Nel programma seguente viene creata una calcolatrice che esegue le 4 operazioni 
+			matematiche in base alla scelta dell’utente:
+			<br>
+			<br>
+			<i># -*- coding utf-8 -*- </i> <br>
+			<i># programma che segue le 4 operazioni </i> <br>
+			puts "Che operazione vuoi svolgere: " <br>
+			puts "1. Addizione" <br>
+			puts "2. Sottrazione" <br>
+			puts "3. Moltiplicazione" <br>
+			puts "4. Divisione" <br> <br>
+			<i>#prelevo il numero inserito dall'utente </i> <br>
+			num = gets.chomp.to_i <br>  <br> 
+			
+			<i>#eseguo il controllo </i> <br>
+			while num < 1 || num > 4 <br>
+			&ensp; puts "il numero inserito non è corretto" <br>
+			&ensp; puts "Inserisci un numero tra 1 e 4" <br>
+			&ensp; num = gets..chomp.to_i <br>
+			end <br>
+
+			<table>
+				<tr> <td> case(num) </td> <td>
+				<tr> <td width = 60% > &ensp; when 1 </td> <td> &ensp; when 3 </td> </tr>
+				<tr> <td> &emsp; puts "inserisci il primo numero"</td> <td> &emsp; puts "inserisci il primo numero" </td> </tr>
+				<tr> <td> &emsp; x = gets.to_i </td> <td> &emsp; x = gets.to_i </td> </tr>
+				<tr> <td> &emsp; puts "inserisci il secondo numero" </td> <td>&emsp;  puts "inserisci il secondo numero" </td> </tr>
+				<tr> <td> &emsp; y = gets.to_i </td> <td> &emsp;  y = gets.to_i </td> </tr>
+				<tr> <td> &emsp; risultato = x + y </td> <td>&emsp; risultato = x * y </td> </tr> 
+				<tr> <td> &emsp; <i>#trasforma il risultato in stringa </i> </td> 
+				<tr> <td> &emsp; puts  "Risulta: " + risultato.to_s </td> <td> &emsp; puts  "Risulta: " + risultato.to_s </td> </tr> 
+				<tr> <td> <br> </td> </tr>
+				<tr> <td> &ensp; when 2 </td> <td> &ensp; when 4 </td> </tr>
+				<tr> <td> &emsp; puts "inserisci il primo numero"</td> <td> &emsp; puts "inserisci il primo numero" </td> </tr>
+				<tr> <td> &emsp; x = gets.to_i </td> <td> &emsp; x = gets.to_i </td> </tr>
+				<tr> <td> &emsp; puts "inserisci il secondo numero" </td> <td>&emsp;  puts "inserisci il secondo numero" </td> </tr>
+				<tr> <td> &emsp; y = gets.to_i </td> <td> &emsp;  y = gets.to_i </td> </tr>
+				<tr> <td> &emsp; risultato = x - y </td> <td>&emsp; risultato = x / y </td> </tr> 
+				<tr> <td> &emsp; puts  "Risulta: " + risultato.to_s </td> <td> &emsp; puts  "Risulta: " + risultato.to_s </td> </tr> 
+				<tr> <td> &ensp; else </td></tr>
+				<tr> <td> &emsp; puts " " </td></tr>
+				<tr> <td> end </td></tr>
+			</table>
+
+
+			<br>
+			Qui di seguito si può osservare un programma che contiene un dizionario; quando viene eseguito, 
+			vengono fornite chiave e valore, che sono contenuti nel dizionario:<br>
+			<br>
+			dizionario = {'nome' => 'pippo', 'cognome' => 'pluto'} <br> <br>
+			dizionario.each do |chiave,valore| <i>#prende chiave e valore </i> <br>
+			&ensp; puts 'chiave '+ chiave <i>#stampa il valore che abbiamo assegnato alla chiave </i> <br>
+			&ensp; puts 'valore '+ valore <br>
+			end 
+		</p>
+     </div>
+    </main>
+  </body>
+</html>
+		

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Ruby</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+<script type="application/ld+json">
+{"name":"Your awesome title","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","@type":"WebSite","url":"http://localhost:4000/","headline":"Your awesome title","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" />
+  
+</head>
+
+
+  <body>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home">
+			<h2 class="post-list-heading">
+			DIZIONARI o HASH
+		</h2>
+      </li>
+ </div>
+	Per creare un dizionario/hash si utilizzano le parentesi graffe ({ }). 
+		Negli hash l’indice può essere di qualsiasi tipo, rispetto all’array, e può essere una stringa o un’ espressione regolare; per salvare un valore in un hash è necessario specificare sia l’indice, che il  valore associato ad esso.
+  <br>
+  <br>
+		<p>
+			>> nome = Hash.new(0) <br>
+			=> {} <br>
+			>> 5.times{print 'ciao '} <br>
+			ciao ciao ciao ciao ciao => 5 <br>
+			<br>
+			
+			Nel primo caso viene creato un nuovo dizionario vuoto, mentre nel secondo viene ripetuto il contenuto del dizionario per 5 volte, a seconda del numero indicato dall’utente.
+			<br>
+			<br>
+			<i> Esempio </i>: <br>
+			<br>
+			Qui è stato creato un hash vuoto. <br>
+			<br>
+			>> cibo = {} <br>
+			=> {} <br>
+
+			<br>
+			Gli hash di seguito indicati contengono  un insieme di key(chiave) => value(valore). Al loro interno le chiavi sono rappresentate dalle pietanze mentre i valori dall’indice di gradimento.  <br>
+			<br>
+			>> cibo [" Carciofi "] = : non_buono <br>
+			=> : non_buono <br>
+			>> cibo [" Salsiccia "] = : molto_buono <br>
+			=> : molto_buono <br>
+			>> cibo [" Pajata "] = : non_so <br>
+			=> : non_so <br>
+			>> cibo [" Mozzarella "] = : buono <br>
+			=> : buono <br>
+			>> cibo [" Aragosta "] = : ottimo <br>
+			=> : ottimo <br>
+			<br>
+			Come indicato nel caso sottostante, se richiamato, il dizionario cibo mostra a video il suo contenuto. <br>
+			<br>
+			>> cibo <br>
+			=> {" Carciofi " => : non_buono, " Salsiccia " => : molto_buono ... } <br>
+			<br>
+			Di seguito viene creato un hash per memorizzare l’indice di gradimento e successivamente viene riempito con le recensioni. <br>
+			<br>
+			>> recensioni = Hash.new(0) <br>
+			=> {} <br>
+			>> food.values.each {|voto| recensioni [voto]+= 1} <br>
+			<br>
+<br>
+			Una volta richiamato, mostra a video i risultati <br>
+			<br>
+			>> recensioni
+			=> {: non_buono => 2, : molto_buono => 4, : non_so => 1,...} <br>
+		</p>
+		     </div>
+    </main>
+  </body>
+  </html>
