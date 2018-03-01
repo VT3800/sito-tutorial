@@ -1,0 +1,836 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title> Ruby tutorial</title>
+		<meta charset="utf-8">
+	<style>
+		body { font-family: 'Basketville Old Face';}
+		h1,h2,h3 {
+			font-family: 'Yanone Kaffesatz';
+			font-weig ht: normal;
+		}
+		.remake-code, .remake-inline-code { font-family: 'Basketville Old Face';}
+	</style>
+	</head>
+	<body>
+		<textarea id ="source">
+		class: center, middle
+			
+		#  RUBY 
+		
+		---
+		
+		# INDICE
+
+		<ol>
+			<li> Introduzione; </li>
+			<li> Editor e console; </li>
+			<li> Operazioni; </li>
+			<ul>
+				<li> matematiche; </li>
+				<li> confronto. </li>
+			</ul>
+			<li> Stringhe; </li>
+			<li> Conversioni; </li>
+			<li> Array; </li>
+			<li> Variabili; </li>
+			<li> Range; </li>
+			<li> Dizionari o hash; </li>
+			<li> Blocchi; </li>
+			<li> Controlli di flusso; </li>
+			<li> Cicli; </li>
+			<li> Metodi; </li>
+			<ul>
+				<li> definizione di un metodo; </li>
+				<li> tipi di metodi. </li>
+			</ul>
+			<li> Moduli; </li>
+			<li> Classi; </li>
+			<li> Sottoclassi; </li>
+			<li> Leggere un file; </li>
+			<li> Programmi. </li>
+		</ol>
+
+		---
+
+		# INTRODUZIONE
+		
+		Ruby è un linguaggio orientato agli oggetti ed è interpretato
+		(il codice sorgente viene tradotto in maniera istantanea e vengono eseguite le istruzioni così come indicare nel codice sorgente, senza bisogna di compilatori). 
+		Il suo principale obbiettivo è permette al programmatore di usufruire di un linguaggio semplice 
+		che gli permetta di essere veloce e produttivo.
+		
+		---
+		
+		# EDITOR
+		
+		Ruby è multipiattaforma e quindi disponibile per Linux, Windows, Mac OS e altri sistemi operativi minori. Non esiste un vero e proprio editor per Ruby ma nella maggior parte dei casi si tratta di editor già esistenti (in genere di Java) che sono dotati di pulgin per Ruby.
+		Quindi, in linea di massima, si può utilizzare qualsiasi editor di testo, ad esempio Emacs, Vi o Notepad. Esistono tuttavia ambienti di sviluppo che integrano un supporto a Ruby più completo come NetBeans, IntelliJ IDEA e Eclipse.
+		
+		
+		# CONSOLE
+		
+		La console di Ruby viene denominata irb(Interactive Ruby Shell), e per usufruirne basta digitare il comando “irb”, sulla Shell della linea di comando.
+		
+		<b> irb(main):001:0> </b>
+		
+		Se si vuole utilizzare un prompt più breve, basta digitare il comando “irb --prompt simple”
+		
+		<p><b> >> </b></p>
+		
+		---
+		class: center, middle
+		
+		# OPERAZIONI
+		
+		---
+		
+		# Matematiche
+		
+		Con Ruby si possono eseguire operazioni matematiche. Qui di seguito possiamo vedere alcuni esempi:
+		<table>
+			<tr> <td width = "50%"> >> 5+6   </td> <td align = right> <b> + addizione </b> </td> </tr>         
+			<tr> <td> => 11 </td></tr>
+			<tr> <td> >> 7-2 </td> <td align = right> <b>  - sottrazione </b> </td> </tr>              
+			<tr> <td> => 5  </td> </tr>
+			<tr> <td> >> 3*8 </td> <td align = right>  <b> * moltiplicazione </b> </td> </tr>                         
+			<tr> <td> => 24 </td></tr>
+			<tr> <td> >> 9/3 </td> <td align = right>  <b> / divisione </b> </td> </tr>        
+			<tr> <td> => 3 </td></tr>
+			<tr> <td> >> 3**2 </td> <td align = right> <b> ** elevazione a potenza </b> </td> </tr>             
+			<tr> <td> => 9 </td></tr>
+			<tr> <td> >> 4%2 </td> <td align = right> <b> % modulo </b> </td> </tr>                
+			<tr> <td> => 0 </td></tr>
+			<tr> <td> >> 7/2.0 </td> <td align = right> <b> operazione con float </b> </td> </tr>               
+			<tr> <td> => 3.5 </td></tr>
+		</table>
+		
+		---
+		
+		# Confronto
+		
+		Con Ruby si possono usare gli operatori di confronto per comparare dei
+		valori utilizzando i seguenti simboli: <, >, ==, !=, <=, >=. <br>
+		Questi simboli possono essere usati anche con le stringhe in base all’ordine alfabetico:
+		‘a’ > ‘b’ => false oppure ‘b’ > ‘a’ => true, perché ‘b’ venendo dopo nell’alfabeto è maggiore di ‘a’(le maiuscole vengono prima delle minuscole);
+		
+		<p>
+			>> 'a' > 'b' <br>
+			=> false <br>
+			>> 'B' < 'A' <br>
+			=> false 
+		</p>
+		
+		---
+		
+		# STRINGHE 
+		
+		Per scrivere una stringa vengono utilizzati i doppi apici (“ ”) o quelli singoli (‘ ’).
+		Con le stringhe si possono utilizzare differenti comandi:
+		
+		<ul>
+			<li> <b> Downcase </b>, converte la stringa in minuscolo; <br>
+				>> 'PIPPO'.downcase <br>
+				=> "pippo" </li>
+			<li> <b> Upcase </b>, converte la stringa in maiuscolo; <br>
+				>> 'pippo'.upcase <br>
+				=> "PIPPO" </li>
+			<li> <b> Capitalize </b>, restituisce una copia della stringa con il primo carattere maiuscolo; <br>
+				>> 'pippo'.capitalize <br>
+				=> "Pippo" </li>
+			<li> <b> Swapcase </b>, restituisce una stringa con i caratteri invertiti, minuscole al posto di maiuscole e viceversa; <br>
+				>> 'PiPpO'.swapcase <br>
+				=> "pIpPo" </li>
+			<li> <b> Chop</b>, elimina l’ultimo carattere della stringa; <br>
+				>> 'pippo'.chop <br>
+				=> 'pipp' </li>
+		</ul>
+		---
+		<ul>
+			<li> <b> Split(delimitatore) </b> , divide la stringa in sottostringhe in base al delimitatore passato come argomento; <br>
+				>> 'ciao mondo'.split <br>
+				=> ["ciao", "mondo"] <br>
+				>> 'ciao mondo'.split('o') <br>
+				=> ["cia", "m", "nd"] </li>
+			<li> <b> “stringa1”+” stringa2” </b>, concatena le stringhe; <br>
+				>> 'ciao ' + 'Pippo' <br>
+				=> "ciao Pippo" </li>
+			<li> <b> Reverse </b>, inverte la stringa(non utilizzabile con i numeri); <br>
+				>> 'pippo'.reverse <br>
+				=> "oppip" </li>
+			<li> <b> Length </b>, mostra a video la lunghezza della stringa; <br>
+				>> 'ciao Pippo'.length <br>
+				=> 10 </li>
+		</ul>
+		---
+
+		<ul>
+			<li> <b> “stringa”*num </b>, replica la stringa per il numero di volte indicato da num; <br>
+				>> 'pippo '*4 <br>
+				=> "pippo pippo pippo pippo" </li> <br>
+			<li> <b> \ </b>, è il carattere di escape, che trasforma il segno successivo in un carattere di tipo stringa e
+			non viene visto come un simbolo di chiusura: es. ‘pippo è andato dall\’altra parte’, non visualizza errore se viene inserito un apice che funge da apostrofo; 
+			Un altro utilizzo per non incappare in un errore è: “pippo  è andato dall’altra parte”, 
+			dove vengono utilizzate le doppie virgolette in modo che se all’interno della frase viene messo un apice, quest’ultimo verrà visto come un carattere normale; <br> 
+			<br>
+				>> 'Pippo è andato dall\'altra parte' <br>
+				=> "Pippo è andato dall'altra parte" <br>
+				>> "Pippo è andato dall'altra parte" <br>
+				=> "Pippo è andato dall'altra parte" </li>
+		</ul>
+		
+		---
+		
+		# CONVERSIONI
+		
+		In Ruby è possibile convertire le stringhe, i numeri e gli array, con i seguenti comandi:
+		
+		<ul>
+			<li> <b> To_s </b> (to string), converte i valori in stringhe; </li>
+			<li> <b> To_i </b> (to int), converte i valori in interi; </li>
+			<li> <b> To_a </b> (to array), converte i valori in array; </li>
+		</ul>
+		
+		<p>
+			>> 456.to_s.reverse.to_i <br>
+			=> 654
+		</p>
+		
+		In questo caso, l’utente ha convertito il numero intero 456,
+		in stringa per poterlo invertire, 
+		e successivamente lo ha riconvertito in intero.
+		
+		---
+		
+		# ARRAY 
+		
+		Sono liste, contrassegnate dalle parentesi quadre ([ ]), che possono essere composte da numeri, stringhe ecc.
+		Per creare un array vuoto si scrivono le parentesi quadre, senza elementi al loro interno; invece per creare un array di elementi si scrive per esempio: [num1,num2,num3]
+		Con gli array si possono utilizzare i seguenti comandi:
+
+		<ul>
+			<li> <b> [ ].max </b> , prende il numero più grande contenuto nell’array; <br>
+				>> [1,2,3].max <br>
+				=> 3 </li>
+			<li> <b> [ ].min </b>, prende il numero più piccolo contenuto nella lista; <br>
+				>> [1,2,3].min <br>
+				=> 1 </li>
+			<li> <b> [ ].sort </b>, mette in ordine crescente l’array; <br>
+				>> [3,1,2].sort <br>
+				=> [1,2,3] </li>
+			<li> <b> [ ].last </b>, restituisce l’ultimo numero della lista; <br>
+				>> [1,2,3].last <br>
+				=> 3 </li> 
+			<li> <b> [ ].reverse </b>, inverte l’array; <br>
+				>> [1,2,3].reverse <br>
+				=> [3,2,1] </li>
+		</ul>
+		
+		---
+		
+		<ul>
+			<li> <b> [ ].push(num) </b>, aumenta la lunghezza dell’array, aggiungendo il numero inserito nelle parentesi; <br>
+				>> [1,2,3].push(4) <br>
+				=> [1,2,3,4] </li>
+			<li> <b> [ ].pop </b>, restituisce l’ultimo valore che abbiamo inserito nell’array. <br>
+				>> [1,2,3].pop <br>
+				=> 3 </li>
+		</ul>
+		
+		Gli array possono contenere anche delle stringhe. 
+		Qui di seguito si possono vedere alcuni esempi:
+		
+		<p>
+			>> "Ciao".chars.to_a <br>
+			=> ["C", "i", "a", "o"] <br>
+			>> "Ciao".chars.to_a.reverse <br>
+			=> ["o", "a", "i", "C"] 
+		</p>
+		
+		Nel primo caso la stringa viene convertita in un array,
+		mentre nel secondo caso viene trasformata e invertita.
+		
+		---
+		
+		# VARIABILI 
+		
+		Sono dei contenitori identificati da un nome univoco, di un qualsiasi valore, sia esso un numero o una stringa. 
+		Le variabili vengono definite da un tipo e un nome (definito identificatore). Per assegnare un valore ad una variabile viene utilizzato il simbolo dell’uguale (=). Le variabili vengono distinte in: locali, globali, di istanza, di classe e costanti. 
+		
+		<ul>
+			<li> <b><u> variabili locali </b></u>, per convenzione, devono iniziare con una lettera minuscola o con il carattere underscore( _ ). Sono definite nella funzione (o nel blocco) che le usa; nascono quando la funzione entra in esecuzione e muoiono al termine dell’esecuzione della funzione.  </li>
+			<li> <b><u> variabili globali </b></u>, vengono contrassegnate con il segno <b> $ </b>. Valgono dal punto di definizione fino alla fine del file. Lo spazio viene allocato ed inizializzato di default a zero, a meno che sia diversamente inizializzato dal programmatore. </li>
+			<li> <b><u> variabili di istanza </b></u>, vengono distinte con il segno <b> @ </b>. È una variabile associata a una classe di oggetti che rappresenta un elemento dell'informazione contenuta nell'oggetto stesso. </li>
+			<li> <b><u> variabili di classe </b></u>, vengono identificate con <b> due </b> segni @. Una variabile di classe corrisponde al concetto di variabili statiche in altri linguaggi come Java e PHP. È dunque una variabile che appartiene alla classe il cui valore è comune a tutte le istanze della classe stessa. </li>
+		</ul>
+		
+		---
+		
+		<ul>
+			<li> <b><u> costanti </b></u>, vengono definite con la prima lettera o con i caratteri che compongono il suo nome maiuscoli. Identifica una porzione di memoria il cui valore non varia nel corso dell'esecuzione di un programma.</li>
+		</ul>
+		
+		<p>
+			Qui di seguito si può osservare come si assegna un valore a una variabile e come si può richiamare. <br>
+			>> contenitore = [3,4,5,6,7,8,9] <br>
+			=> [3,4,5,6,7,8,9] <br>
+			>> contenitore <br>
+			=> [3,4,5,6,7,8,9] <br>
+			<br>
+			
+		</p>
+		
+		---
+		
+		# RANGE
+		
+		In Ruby esiste anche il comando per indicare un range di valori e questo viene identificato con due punti (..).
+		Qui di seguito si possono osservare alcuni esempi:
+		
+		<p>
+			>> (1..5).each {|a| print "#{a}, "} <br>
+			1,2,3,4,5, => 1..5 <br>
+			>> ("bad".."bag").each {|a| print "#{a}, "} <br>
+			bad, bae, baf, bag, => "bad".."bag" <br>
+			<br>
+			Nel primo caso viene stampato un range di numeri da 1 a 5,
+			mentre nel secondo caso si marca un range di stringhe da “bad” a “bag”.
+			Essendo le prime lettere delle stringhe uguali, viene analizzata solo l’ultima lettera e quindi il range si basa dalla lettera “d” alla “g” seguendo l’ordine alfabetico.
+		</p>
+		
+		---
+		
+		# DIZIONARI o HASH
+		
+		Per creare un dizionario/hash si utilizzano le parentesi graffe ({ }). 
+		Negli hash l’indice può essere di qualsiasi tipo, rispetto all’array, e può essere una stringa o un’ espressione regolare; per salvare un valore in un hash è necessario specificare sia l’indice, che il  valore associato ad esso.
+		
+		<p>
+			>> nome = Hash.new(0) <br>
+			=> {} <br>
+			>> 5.times{print 'ciao '} <br>
+			ciao ciao ciao ciao ciao => 5 <br>
+			<br>
+			
+			Nel primo caso viene creato un nuovo dizionario vuoto, mentre nel secondo viene ripetuto il contenuto del dizionario per 5 volte, a seconda del numero indicato dall’utente.
+			<br>
+			<br>
+			<i> Esempio </i>: <br>
+			<br>
+			Qui è stato creato un hash vuoto. <br>
+			<br>
+			>> cibo = {} <br>
+			=> {} <br>
+		</p>
+		
+		---
+		
+		<p>
+			Gli hash di seguito indicati contengono  un insieme di key(chiave) => value(valore). Al loro interno le chiavi sono rappresentate dalle pietanze mentre i valori dall’indice di gradimento.  <br>
+			<br>
+			>> cibo [" Carciofi "] = : non_buono <br>
+			=> : non_buono <br>
+			>> cibo [" Salsiccia "] = : molto_buono <br>
+			=> : molto_buono <br>
+			>> cibo [" Pajata "] = : non_so <br>
+			=> : non_so <br>
+			>> cibo [" Mozzarella "] = : buono <br>
+			=> : buono <br>
+			>> cibo [" Aragosta "] = : ottimo <br>
+			=> : ottimo <br>
+			<br>
+			Come indicato nel caso sottostante, se richiamato, il dizionario cibo mostra a video il suo contenuto. <br>
+			<br>
+			>> cibo <br>
+			=> {" Carciofi " => : non_buono, " Salsiccia " => : molto_buono ... } <br>
+			<br>
+			Di seguito viene creato un hash per memorizzare l’indice di gradimento e successivamente viene riempito con le recensioni. <br>
+			<br>
+			>> recensioni = Hash.new(0) <br>
+			=> {} <br>
+			>> food.values.each {|voto| recensioni [voto]+= 1} <br>
+			<br>
+		</p>
+		
+		---
+		
+		<p>
+			Una volta richiamato, mostra a video i risultati <br>
+			<br>
+			>> recensioni
+			=> {: non_buono => 2, : molto_buono => 4, : non_so => 1,...} <br>
+		</p>
+		
+		---
+		
+		#  BLOCCHI
+		Gestiscono i dettagli all’interno del metodo, l’istallazione, la rimozione e 
+		gli errori (non visibili all’utente). <br>
+					
+		<p> 
+		>>> food.values.each{|voto| recensioni[voto] += 1} <br> <br>
+		In questo esempio, <b>|voto|</b> è la variabile di blocco, dove vengono contenuti tutti i valori di food, mentre <b>recensioni [voto] += 1</b> 
+		è il codice di blocco, dove vengono eseguiti. 
+		</p>
+		
+		---
+
+		#  CONROLLI DI FLUSSO
+		I controlli di flusso in sostanza vengono rappresentati da IF, THEN, ELSE , UNLESS, ELSIF/ ELSE IF e CASE.
+		Qui di seguito osserviamo:
+		<ul>
+			<li> 
+				nel primo caso il passaggio di una stringa e il controllo con if-then/else,
+				se la stringa è piena o vuota; se la sequenza di caratteri contiene qualcosa 
+				restituirà un messaggio altrimenti ne restituirà un altro per dirci che non 
+				contiene niente. <br> <br>
+				>> string = 'a string'<br>
+				=> "a string"<br>
+				>> if string == " " then <br>
+				?> "La stringa non contiene niente" <br>
+				>> else <br>
+				?> "La stringa è piena" <br>
+				>> end <br>
+				=> "La stringa è piena"
+			</li>
+			<br>
+		</ul>
+		
+		---
+		<ul>
+			<li>
+				nel secondo caso, verrà utilizzato il comando if not e unless 
+				(che hanno lo stessa funzione), per controllare se la variabile ‘x’ 
+				contiene o no qualcosa. <br> <br>
+				>> x = 'un oggetto' <br>
+				=> "un oggetto" <br>
+				>> puts "x non è vuoto" if not x.empty? <br>
+				x non è vuoto <br>
+				=> nil <br>
+				>> puts "x non è vuoto" unless x.empty? <br>
+				x non è vuoto <br>
+				=> nil <br>
+				<br>
+			</li>
+			<li>
+				Se ci sono più condizioni, solitamente si tende ad utilizzare il comando 
+				“else if” oppure “elsif” per risparmiare caratteri. Prima dell’ ’end’ 
+				possiamo mettere l’ “else” che verrà eseguito se in nessuno dei precedenti 
+				casi viene soddisfatta la condizione richiesta.
+			</li>
+		</ul>
+		
+		---
+		<ul>
+			<li>
+				Quando ci sono molti casi, ce la possibilità di utilizzare il comando 
+				“case” che prende come argomento il dato che si vuole controllare e ad 
+				ogni caso bisogna scrivere “when” seguito dall’espressione che può 
+				risultare e il codice a lui sottoscritto. <br>
+				puts 'Dimmi la tua età: ' <br>
+				eta = gets.to_i <br>
+				<br>
+				case eta <br>
+				&ensp; when 6 <br>
+				&emsp; &emsp; puts 'Stai facendo la prima elementare' <br>
+				&ensp;when 7 <br>
+				&emsp; &emsp; puts 'Stai facendo la seconda elementare' <br>
+				&ensp;when 8 <br>
+				&emsp; &emsp; puts 'Stai facendo la terza elementare' <br>
+				&ensp;when 9 <br>
+				&emsp; &emsp; puts 'Stai facendo la quarta elementare' <br>
+				&ensp;when 10 <br>
+				&emsp; &emsp; puts 'Stai facendo la quinta elementare' <br>
+				&ensp; else <br>
+				&emsp; &emsp; if eta > 10 <br>
+				&emsp; &emsp; &emsp; &emsp;puts 'Probabilmente sei alle medie o alle superiori' <br>
+				&emsp; &emsp; else <br>
+				&emsp; &emsp; &emsp; &emsp; puts 'Non sei mai andato a scuola' <br>
+				&ensp;end <br>
+				end 	
+			</li>
+		</ul>
+		---
+		#CICLI
+		Esistono differenti modi per ripetere un blocco di codice. 
+		Quelli analizzati sono: WHILE, UNTIL e FOR.
+		<ul>
+			<li>
+				<b>while...end </b> ripete il blocco di codice finché la condizione è vera;
+			</li>
+			<li>
+				<b>until...end </b> se la condizione è falsa replica una determinata azione;
+			</li>
+			<li>
+				<b>for...in...end</b> per ogni elemento all’interno di un insieme di valori esegue un’ operazione. <br>
+				<br>
+				>> numeri = [1,2,3,4,5,6,7,8] <br>
+				=> [1,2,3,4,5,6,7,8] <br>
+				>> for numero in numeri <br>
+				>>puts numero <br>
+				?> end <br>
+				1 <br>
+				2 <br>
+				3 <br>
+				4 <br>
+				5 <br>
+				6 <br>
+				7 <br>
+				8 <br>
+				=> [1,2,3,4,5,6,7,8] <br>
+			</li>
+		</ul>
+
+		---
+		class: center, middle
+		
+		# METODI
+
+		---
+
+		# COME SI DEFINISCE UN METODO?
+		<p>
+			Per creare un metodo si utilizza il comando DEF e per terminarlo si usa END. <br>
+			>> def metodo <br>
+			>> end <br>
+			=> nil <br>
+			<br>
+			Una volta creato un metodo, si richiama scrivendo il nome e l’argomento (se definito nel metodo), sulla riga di comando. <br>
+			<br>
+			>> metodo <br>
+			=> nil <br>
+			<br>
+			I metodi presenti all’interno di una classe (che si vedrà in seguito) sono 
+			solitamente <b>pubblici</b>, e cioè possono essere utilizzati al di fuori della 
+			classe, in qualsiasi parte del codice. Se si vuole richiamare un metodo 
+			solo all’interno della sua classe è necessario dichiararlo come <b>privato</b>, 
+			mettendo la parola “private” prima di definire il metodo. Per richiamare 
+			il metodo privato è necessario creare un altro metodo all’interno del 
+			programma che permetta di richiamare il metodo e così da poterlo utilizzare.
+		</p>
+		
+		---
+		
+		<p>
+			<i>Esempio:</i>
+			<br><br>
+			class Human <br>
+			&ensp; attr_accessor :name, :age <br><br>
+			&ensp; <i>#metodo pubblico</i> <br>
+			&ensp; def dimmi_di_te <br>
+			&emsp; puts "Ciao, sono #{@name} e ho #{@age} anni."<br>
+			&ensp; end <br>
+			<br>
+			&ensp; <i>#metodo pubblico che ci permette di richiamare il metodo privato</i><br>
+			&ensp; def confessa <br>
+			&emsp; dimmi_un_segreto <br>
+			&ensp; end <br>
+			<br>
+			&ensp; private <br>
+			&ensp; def dimmi_un_segreto <br>
+			&emsp; puts "Non sono umano, sono un robot" <br>
+			&ensp; end <br> <br>
+			end <br>
+		</p>
+		---
+		<p>
+			<i>#creo un nuovo oggetto di tipo Human</i><br>
+			h = Human.new<br>
+			<br>
+			<i>#diamo un valore ai parametri da passare alle funzioni</i><br>
+			h.name = "Marvin"<br>
+			h.age = 31<br>
+			<br>
+			<i>#richiamo i due metodi</i><br>
+			h.dimmi_di_te<br>
+			h.confessa<br>
+		</p> 
+		---
+		#TIPI DI METODI 
+		In questo linguaggio di programmazione sono presenti differenti metodi;
+		qui di seguito ne vengono indicati alcuni: 
+		<ul>
+			<li> 
+				<b>EACH</b>, metodo che accetta un blocco di codice e lo esegue per ogni elemento della lista. I bit tra Do e END sono un unico blocco;
+			</li>
+			<li>
+				<b>EXIST? (‘miofile.txt’)</b>, controlla che il file esista;
+			</li>
+			<li>
+				<b>FILE? (‘miofile.txt’)</b>, controlla se un file è un documento;
+			</li>
+			<li>
+				<b>DIRECTORY?(‘miadirectory’) </b>, controlla se un file è una cartella (directory);
+			</li>
+			<li>
+				<b>FTYPE (‘miofile.txt’)</b>, controlla che tipo di file è, per esempio se è un documento o una directory;
+			</li>
+			<li>
+				<b>SIZE (‘miofile.txt’) </b>, controlla quanto è grande e la quantità di spazio che occupa sul disco;
+			</li>
+			<li>
+				<b>JOIN (‘cartella1’,’cartella2’,’miofile.txt’) </b>, costruisce un percorso di file concatenando due o più stringhe;
+			</li>
+			<li>
+				<b>BASENAME (‘/cartella1/cartella2/miofile.txt’)  </b>, restituisce il nome del mio file;
+			</li>
+			<li>
+				<b>DIRNAME (‘/cartella1/cartella2/miofile.txt’) </b>, riporta il percorso delle directory senza il nome del file;
+			</li>
+			<li>
+				<b>EXTNAME (‘miofile.txt’) </b>, scrive sulla linea di comando l’estensione del nome del file, cioè il testo dopo il punto, comprendendolo;
+			</li>
+			<li>
+				<b>MAP</b>, invoca il codice di blocco indicato una volta per ogni elemento self e crea un nuovo array contenente i valori restituiti dal blocco;
+			</li>
+			<li>
+				<b>SELECT </b>, è simile a map ma restituisce solo gli elementi che corrispondono alla condizione.
+			</li>
+		</ul>
+		---
+		#MODULI 
+		I moduli, in Ruby, sono simili alle classi, ma a differenza di quest’ultime,
+		non possono avere istanze, non hanno sottoclassi e sono definiti da 
+		MODULE…END. Per poter essere eseguiti all’interno del programma i 
+		moduli devono essere sempre inclusi, altrimenti il programma non 
+		riconosce i metodi definiti all’interno del modulo. <br> <br>
+		<p>
+			module Pippo <br>
+			&ensp; def dice(cosa) <br>
+			&emsp; puts "pippo dice: "+ cosa<br>
+			&ensp; end <br>
+			end <br> <br>
+			include Pippo <br>
+			dice('ciao')<br>	
+		</p>	
+		I questo caso nel programma riportato sopra, viene mostrata la creazione 
+		del modulo Pippo e al suo interno viene inserito un metodo che stampa una 
+		stringa. Come argomento si può passare sia un numero che una stringa.
+		Dopo aver definito il modulo va incluso e successivamente viene richiamato 
+		il metodo “dice”  il cui argomento è una stringa. La stringa risultante 
+		sarà: “Pippo dice: ciao”.
+		
+		---
+		#CLASSI 
+		Una classe è una raccolta di metodi, il cui nome, per convenzione inizia 
+		con una lettera maiuscola. Per inizializzare una classe è necessario 
+		scrivere “CLASS” e per terminarla si scrive “END”.  Quando si vuole 
+		creare un nuovo oggetto (un’istanza) della classe che si va a definire
+		bisogna inserire il comando “nome_classe.new”. <br>
+		Un’ istanza è un particolare oggetto di una determinata classe. 
+		Ogni istanza è separata dalle altre, ma condivide le sue caratteristiche 
+		generali con gli altri oggetti della stessa classe. <br>
+
+			
+		Per definire un oggetto è quindi necessario individuare:
+		<ul>
+			<li>le sue caratteristiche (attributi);</li>
+			<li>le azioni che compie e/o subisce (metodi).</li>
+		</ul>
+		
+		Per accedere agli attributi  di una classe, ci sono tre possibilità:<br>
+		<ul>
+			<li><b>attr_reader</b>, serve per accedere a un attributo in sola lettura;</li>
+			<li><b>attr_writer</b>, si utilizza per accedere a un attributo in sola scrittura;</li>
+			<li><b>attr_accessor</b>, viene usato per accedere in scrittura e lettura.</li>
+		</ul>
+
+		---
+		Nel programma sottostante, viene creata la classe Persona, e al suo 
+		interno si vanno a definire due metodi “inizialize” e “goodbye”. 
+		Successivamente,  dopo aver creato la classe, vengono istanziati 
+		due oggetti di tipo Persona (p1,p2) che richiameranno i due metodi.<br>
+		
+		<i>Esempio:</i><br>
+		class Persona <br>
+		&ensp; def inizialize <br>
+		&emsp; puts "Ciao !" <br>
+		&ensp; end <br>
+		
+		&ensp; def goodbye <br>
+		&emsp; puts "Arrivederci !" <br>
+		&ensp; end <br>
+		end<br> <br>
+		
+		<i>#creiamo due oggetti della classe Persona</i><br> 
+			p1= Persona.new<br>
+			p2= Persona.new<br> <br>
+		<i>#richiamo il metodo creato dalla classe</i><br> 
+		puts p1.inizialize<br>
+		puts p2.goodbye <br>
+		<br>
+		
+		---
+		#SOTTOCLASSI 
+		<p> Per definire una sottoclasse in Ruby viene utilizzato il 
+		simbolo "<”: es. Palindromo < String, in questo caso “Palindromo”
+		è sottoclasse di “String”. La sottoclasse eredita tutti i metodi
+		pubblici della superclasse (classe da cui eredita).
+		</p>
+		<i>Esempio:</i><br>
+		class Palindromo < String <br>
+		&ensp; def palindrome? <br>
+		&emsp; self == self.reverse <br>
+		&ensp; end <br>
+		end <br> <br>
+		parola = Palindromo.new("Anna")<br>
+		puts parola.palindrome? <i>#true/false</i> <br>
+		
+		In questo esempio viene creata la sottoclasse “Palindromo”, che ha 
+		al suo interno il metodo che verifica se la parola inserita dall’utente
+		è palindroma o no. Dopo aver definito la classe, viene creato un 
+		oggetto di tipo Palindromo, dove vengono inseriti la stringa con 
+		la parola che si vuole verificare. Successivamente viene richiamato 
+		il metodo che dirà se la parola è palindroma o meno.
+		
+		---
+		# LEGGERE UN FILE  
+		<p>
+			Per leggere e visualizzare un file direttamente da linea di comando 
+			si utilizza il comando rb = File.open("es1.txt").readlines, che 
+			apre il file, lo visualizza nel terminale su una o più righe.
+			Di seguito, con il comando “puts rb”, nella linea di comando, 
+			stampa  tutto il contenuto del file come se venisse aperto con
+			l’editor (ovviamente il file che viene visualizzato sul terminale 
+			è di sola lettura).<br> <br>
+			<table>
+				<tr> <td> >> rb = File.open("es1.rb").readlines </td> <td> <i>#creiamo due oggetti della classe Persona</i> </td> </tr>
+				<tr> <td> => (testo completo del programma che è stato richiamato)</td> <td> p1= Persona.new</td> </tr>
+				<tr> <td> >> puts rb</td> <td> p2= Persona.new </td> </tr>
+				<tr> <td> class Persona</td> <td> <i>#richiamo il metodo creato dalla classe</i></td> </tr>
+				<tr> <td> &ensp; def inizialize </td> <td> puts p1.inizialize</td> </tr>
+				<tr> <td> &emsp; puts "Ciao !" </td> <td> puts p2.goodbye</td> </tr>
+				<tr> <td> &ensp; end  </td> <td>  => nil </td> </tr>
+				<tr> <td> &ensp; def goodbye </td> </tr>
+				<tr> <td> &emsp; puts "Arrivederci !"</td> </tr>
+				<tr> <td> &ensp; end </td> </tr>
+				<tr> <td> end </td> </tr>
+				
+				
+			</table>
+		<br>
+			
+		</p>
+		
+		---
+		<p>
+			Un altro modo per leggere un file è con il comando “File.new” che 
+			darà  la possibilità di accedere al file ma in più permette di
+			specificare se il file possa essere di sola lettura, scrittura 
+			o entrambi. In seguito viene generato un ciclo che legge il file
+			una riga per volta e la inserisce in un array. Una volta finita
+			l’operazione è obbligatorio chiudere il file. <br> <br>
+			>> f = File.new("es1.rb", "r")<br>
+			=> # File:es1.rb <br>
+			>> testo = [ ]<br>
+			=> [ ]<br>
+			>> while (riga = f.gets)<br>
+			>> testo << riga<br>
+			>> end<br>
+			=> nil<br>
+			>> f.clone<br>
+			=> nil<br>
+			>> num_righe = testo.length<br>
+			=> 17<br>
+			>> 0.upto num_righe - 1 do |n|<br>
+			?> puts "#"{n}- #{testo[n]}<br>
+			>> end<br>
+		</p>
+		---
+		#PROGRAMMI 
+		<p>
+			Questo programma serve per creare una tabella contenente le tabelline dei
+			numeri da 1 a 10: 
+			<br>
+			numeri = [1,2,3,4,5,6,7,8,9,10] <br>
+			<br>
+			for n in numeri <br>
+			&ensp; riga = ' ' <br>
+			&ensp; for moltiplicatore in numeri <br>
+			&emsp; valore = n * moltiplicatore	<br>
+			&emsp; if valore < 10 <br>
+			&emsp;&emsp; separatore = ' ' <br>
+			&emsp; else <br>
+			&emsp;&emsp; separatore = ' ' <br>
+			&emsp; end <br>
+			&emsp; riga = riga + valore.to_s + separatore <br>
+			&ensp; end <br>
+			&ensp; puts riga <br>
+			end <br>
+		</p>
+		---
+		<p>
+			Nel programma seguente viene creata una calcolatrice che esegue le 4 operazioni 
+			matematiche in base alla scelta dell’utente:
+			<br>
+			<br>
+			<i># -*- coding utf-8 -*- </i> <br>
+			<i># programma che segue le 4 operazioni </i> <br>
+			puts "Che operazione vuoi svolgere: " <br>
+			puts "1. Addizione" <br>
+			puts "2. Sottrazione" <br>
+			puts "3. Moltiplicazione" <br>
+			puts "4. Divisione" <br> <br>
+			<i>#prelevo il numero inserito dall'utente </i> <br>
+			num = gets.chomp.to_i <br>  <br> 
+			
+			<i>#eseguo il controllo </i> <br>
+			while num < 1 || num > 4 <br>
+			&ensp; puts "il numero inserito non è corretto" <br>
+			&ensp; puts "Inserisci un numero tra 1 e 4" <br>
+			&ensp; num = gets..chomp.to_i <br>
+			end <br>
+		</p>
+		---
+		<p>
+			<table>
+				<tr> <td> case(num) </td> <td>
+				<tr> <td width = 60% > &ensp; when 1 </td> <td> &ensp; when 3 </td> </tr>
+				<tr> <td> &emsp; puts "inserisci il primo numero"</td> <td> &emsp; puts "inserisci il primo numero" </td> </tr>
+				<tr> <td> &emsp; x = gets.to_i </td> <td> &emsp; x = gets.to_i </td> </tr>
+				<tr> <td> &emsp; puts "inserisci il secondo numero" </td> <td>&emsp;  puts "inserisci il secondo numero" </td> </tr>
+				<tr> <td> &emsp; y = gets.to_i </td> <td> &emsp;  y = gets.to_i </td> </tr>
+				<tr> <td> &emsp; risultato = x + y </td> <td>&emsp; risultato = x * y </td> </tr> 
+				<tr> <td> &emsp; <i>#trasforma il risultato in stringa </i> </td> 
+				<tr> <td> &emsp; puts  "Risulta: " + risultato.to_s </td> <td> &emsp; puts  "Risulta: " + risultato.to_s </td> </tr> 
+				<tr> <td> <br> </td> </tr>
+				<tr> <td> &ensp; when 2 </td> <td> &ensp; when 4 </td> </tr>
+				<tr> <td> &emsp; puts "inserisci il primo numero"</td> <td> &emsp; puts "inserisci il primo numero" </td> </tr>
+				<tr> <td> &emsp; x = gets.to_i </td> <td> &emsp; x = gets.to_i </td> </tr>
+				<tr> <td> &emsp; puts "inserisci il secondo numero" </td> <td>&emsp;  puts "inserisci il secondo numero" </td> </tr>
+				<tr> <td> &emsp; y = gets.to_i </td> <td> &emsp;  y = gets.to_i </td> </tr>
+				<tr> <td> &emsp; risultato = x - y </td> <td>&emsp; risultato = x / y </td> </tr> 
+				<tr> <td> &emsp; puts  "Risulta: " + risultato.to_s </td> <td> &emsp; puts  "Risulta: " + risultato.to_s </td> </tr> 
+				<tr> <td> &ensp; else </td></tr>
+				<tr> <td> &emsp; puts " " </td></tr>
+				<tr> <td> end </td></tr>
+			</table>
+		</p>
+		---
+		<p>
+			Qui di seguito si può osservare un programma che contiene un dizionario; quando viene eseguito, 
+			vengono fornite chiave e valore, che sono contenuti nel dizionario:<br>
+			<br>
+			dizionario = {'nome' => 'pippo', 'cognome' => 'pluto'} <br> <br>
+			dizionario.each do |chiave,valore| <i>#prende chiave e valore </i> <br>
+			&ensp; puts 'chiave '+ chiave <i>#stampa il valore che abbiamo assegnato alla chiave </i> <br>
+			&ensp; puts 'valore '+ valore <br>
+			end 
+		</p>
+		
+			</textarea>
+			<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+			</script>
+			<script>
+			  var slideshow = remark.create();
+			</script>
+  </body>
+</html>
+		
+	
+
+
+
+
+	
+	
